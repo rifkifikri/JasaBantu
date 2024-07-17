@@ -6,7 +6,7 @@
               <div class="col-md-6">
                  <h1 class="about_taital">About Us</h1>
                  <p class="about_text"> Kami adalah penyedia layanan bantuan profesional yang berdedikasi untuk membantu Anda mencapai tujuan dalam berbagai tugas dan jasa perbaikan perangkat keras. Dengan tim yang berpengalaman dan ahli dalam bidangnya, kami menawarkan layanan cepat, aman, dan terpercaya. Kami memahami betapa pentingnya waktu dan usaha yang dibutuhkan untuk mencapai level tertentu atau menyelesaikan tantangan tertentu, dan kami siap membantu Anda mewujudkannya. Kepuasan pelanggan adalah prioritas utama kami, dan kami berkomitmen untuk memberikan hasil terbaik bagi setiap klien. Bersama kami, Anda bisa mencapai lebih tanpa harus khawatir menghabiskan waktu berjam-jam di depan layar dan menuggu lama servis perbaikan perangkat keras kesayangan anda. Bergabunglah dengan ribuan pelanggan puas kami dan rasakan perbedaannya!" </p>
-                 <div class="read_bt_1"><a href="#">Read More</a></div>
+                 <div class="read_bt_1"><a href="/">Back</a></div>
               </div>
               <div class="col-md-6">
                  <div class="about_img">

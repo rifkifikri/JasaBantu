@@ -81,7 +81,7 @@
                     <div class="box_main">
                        <div class="service_img"><img src="images/icon-3.png"></div>
                        <h4 class="development_text">Project Informatika</h4>
-                       <p class="services_text">Kami juga menerima pengerjaan project jurusan informatika seperti pembuatan website maupun mobile, Project UI/UX, rancangan basis data.</p>
+                       <p class="services_text">Kami juga menerima pengerjaan project jurusan informatika seperti pembuatan website (Laravel) maupun mobile, Project UI/UX, rancangan basis data dan lain sebagainya.</p>
                        <!-- <div class="readmore_bt"><a href="#">Read More</a></div> -->
                     </div>
                  </div>
@@ -105,7 +105,7 @@
               <div class="col-md-6">
                  <h1 class="about_taital">About Us</h1>
                  <p class="about_text"> Kami adalah penyedia layanan bantuan profesional yang berdedikasi untuk membantu Anda mencapai tujuan dalam berbagai tugas dan jasa perbaikan perangkat keras. Dengan tim yang berpengalaman dan ahli dalam bidangnya, kami menawarkan layanan cepat, aman, dan terpercaya. Kami memahami betapa pentingnya waktu dan usaha yang dibutuhkan untuk mencapai level tertentu atau menyelesaikan tantangan tertentu, dan kami siap membantu Anda mewujudkannya. Kepuasan pelanggan adalah prioritas utama kami, dan kami berkomitmen untuk memberikan hasil terbaik bagi setiap klien. Bersama kami, Anda bisa mencapai lebih tanpa harus khawatir menghabiskan waktu berjam-jam di depan layar dan menuggu lama servis perbaikan perangkat keras kesayangan anda. Bergabunglah dengan ribuan pelanggan puas kami dan rasakan perbedaannya!" </p>
-                 <div class="read_bt_1"><a href="#">Read More</a></div>
+                 <div class="read_bt_1"><a href="/about">Read More</a></div>
               </div>
               <div class="col-md-6">
                  <div class="about_img">
@@ -183,8 +183,8 @@
                                       </div>
                                    </div>
                                    <div class="project_main">
-                                      <h2 class="work_text">Home Work</h2>
-                                      <p class="dummy_text">alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use</p>
+                                      <h2 class="work_text">UI Aplikasi Bajuku</h2>
+                                      <p class="dummy_text">Aplikasi ini merupakan prototype pembuatan bajuku yang bertujuan untuk user dapat mengetahui ukuran yang sebenarnya dengan menginputkan ukuran lingkar dada dan panjang.</p>
                                    </div>
                                 </div>
                                 <div class="col-md-4">

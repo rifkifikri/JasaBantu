@@ -504,7 +504,7 @@ button {
     font-size: 40px;
     color: #3b3a3a;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 0px;
 }
 
 .about_text {
@@ -519,7 +519,7 @@ button {
 .about_img {
     width: 100%;
     float: left;
-    background-image: url(../images/about-img.png);
+    background-image: url(../images/about-img.jpg);
     height: auto;
     background-size: cover;
     padding: 0px 0px 0px 0px;
