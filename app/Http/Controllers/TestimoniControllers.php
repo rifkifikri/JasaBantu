@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TestimoniControllers extends Controller
 {
@@ -37,13 +38,28 @@ class TestimoniControllers extends Controller
     public function store(Request $request)
     {
         //
+        $validator =Validator::make($request->all(),[
+            'name' => 'required',
+            'testimoni' => 'required'
+        ]);
+        //check if validation fails
+        if ($validator->fails()) {
+            return redirect()->route('formTestimoni')->with(['gagal'=>'Data nama dan testimoni harus diisi']);
+            // return response()->json($validator->errors(), 422);
+        }
+
         $testimoni = [
             'name'=>$request->name,
             'testimoni'=>$request->testimoni
         ];
         Testimoni::insert($testimoni);
 
-        return view('testimoniForm');
+        return redirect()->route('formTestimoni')->with(['success'=>'data berhasil ditambah']);
+        // ->json([
+        //     'success' =>true,
+        //     'message' =>'Data Berhasil Disimpan',
+        //     'data' => $testimoni
+        // ]);
     }
 
     /**
@@ -60,6 +76,8 @@ class TestimoniControllers extends Controller
     public function edit(string $id)
     {
         //
+        $getTestimoni = Testimoni::findOrFail($id);
+        return view('updateTestimoni', compact('getTestimoni'))->with(['success'=>'data berhasil ditambah']);
     }
 
     /**
@@ -68,6 +86,12 @@ class TestimoniControllers extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $getTestimoni = Testimoni::findOrFail($id);
+        $getTestimoni->update([
+            'name' => $request->name,
+            'testimoni' => $request->testimoni
+        ]);
+        return redirect()->route('daftarTestimoni')->with(['success'=>'data berhasil diubah']);
     }
 
     /**
@@ -76,5 +100,8 @@ class TestimoniControllers extends Controller
     public function destroy(string $id)
     {
         //
+        $getTestimoni = Testimoni::findOrFail($id);
+        $getTestimoni->delete();
+        return redirect()->route('daftarTestimoni')->with(['success'=>'data berhasil dihapus']);
     }
 }

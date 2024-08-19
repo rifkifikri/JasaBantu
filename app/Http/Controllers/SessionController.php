@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use function Laravel\Prompts\alert;
 
@@ -18,12 +19,9 @@ class SessionController extends Controller
         return view('login');
     }
     public function login(Request $request){
-        $request->validate([
+        $validator=Validator::make($request->all(),[
             'username'=> 'required',
             'password' => 'required'
-        ],[
-            'username.required' => 'username wajib diisi',
-            'password.required' => 'passsword wajib diisi'
         ]);
 
     $infologin=[
@@ -31,10 +29,13 @@ class SessionController extends Controller
         'password' => $request->password
     ];
     if(Auth::attempt($infologin)){
-        return view('dashboardAdmin');
+        notify()->success('Berhasil Login');
+        return redirect()->route('dashboard');
+    }else if($validator->fails()){
+        return redirect()->route('login')->with(['message'=>'Username atau Password Harus Diisi']);
     }else{
-        notify()->warning('Username atau Password Salah');
-        return view('login');
+        //notify()->warning('Username atau Password Salah');
+        return redirect()->route('login')->with(['message'=>'Username atau Password Tidak Terdaftar']);
     }
     }
     /**
@@ -43,8 +44,22 @@ class SessionController extends Controller
     public function create()
     {
         //
+        return view('dashboardAdmin');
     }
 
+    /**
+     * Logout
+     */
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('landingPage')->with(['message'=>'Berhasil Logout']);
+    }
+     /**
+      * End Logout
+      */
     /**
      * Store a newly created resource in storage.
      */

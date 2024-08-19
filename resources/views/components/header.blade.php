@@ -39,6 +39,9 @@
                      <li class="nav-item">
                         <a class="nav-link" href="https://api.whatsapp.com/send?phone=628991866979">Contact Us</a>
                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                     </li>
                   </ul>
                   <!-- <form class="form-inline my-2 my-lg-0">
                      <div class="login_text">

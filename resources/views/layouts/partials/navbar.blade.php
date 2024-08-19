@@ -4,45 +4,7 @@
     </a>
     <div class="navbar-content">
         <ul class="navbar-nav">
-            @if(Session('role') == 'Admin Pengaduan')
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ url('#') }}">  <!-- message-ia -->
-                        <i data-feather="bell"></i>
-                        <div class="indicator">
-                            <div class="circle"></div>
-                        </div>
-                    </a>
-                </li>
-            @elseif(Session('role') == 'Pimpinan Lembaga')
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ url('message-pimpinan') }}">
-                        <i data-feather="bell"></i>
-                        <div id="indicator-bell" hidden>
-                            <div class="indicator">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ url('#') }}"><!-- message-ia -->
-                        <i data-feather="bell"></i>
-                        <i data-feather="bell"></i>
-                        <div class="indicator">
-                            <div class="circle"></div>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ url('message-pimpinan') }}">
-                        <i data-feather="bell"></i>
-                        <div class="indicator">
-                            <div class="circle"></div>
-                        </div>
-                    </a>
-                </li>
-            @endif
+           
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +25,7 @@
                         </div>
                     </div>
                     <ul class="list-unstyled p-1">
-                        @if(Session('role') != '')
+                        
                             <li class="dropdown-item py-2">
                                 <a href="{{ url('profile') }}" class="text-body ms-0">
                                     <i class="me-2 icon-md" data-feather="user"></i>
@@ -91,7 +53,7 @@
                                         Logout</a>
                                 </form>
                             </li>
-                        @endif
+                    
                     </ul>
                 </div>
             </li>

@@ -239,7 +239,7 @@
                         <span class="link-title">Testimoni</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a
                         class="nav-link"
                         data-bs-toggle="collapse"
@@ -430,7 +430,7 @@
                         <i class="link-icon" data-feather="settings"></i>
                         <span class="link-title">Setting</span>
                     </a>
-                </li>
+                </li> -->
             @endif
         </ul>
     </div>

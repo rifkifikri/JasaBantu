@@ -7,9 +7,10 @@
             Daftar Testimoni
         </h4>
     </div>
+    
     <div class="d-flex align-items-center flex-wrap text-nowrap">
         <a href="/testimoniForm">
-            <button type="button" class="btn btn-outline-primary btn-icon-text me-2 mb-2 mb-md-0">
+            <button type="button" class="btn btn-outline-primary btn-icon-text me-2 mb-2 mb-md-0" id="btn-create-form">
                 New
             </button></a>
     </div>
@@ -34,6 +35,11 @@
                                     <td>{{$testimoni->id}}</td>
                                     <td>{{$testimoni->name}}</td>
                                     <td>{{$testimoni->testimoni}}</td>
+                                    <td>
+                                        <a href="/testimoni/update/{{ $testimoni->id }}"><button id="edit-testimoni" class="btn btn-primary btn-icon btn-xs edit-testimoni"> <i class="mdi mdi-pencil" ></i></button></a>
+                                        <a href="/testimoni/delete/{{ $testimoni->id }}">
+                                        <button id="delete-testimoni" class="btn btn-danger btn-icon btn-xs delete-testimoni"> <i class="mdi mdi-delete"></i></button></a>
+                                    </td>
                                 </tr>
                                 
                             @endforeach

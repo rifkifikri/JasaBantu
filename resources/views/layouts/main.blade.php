@@ -11,9 +11,10 @@
         <meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web" />
         <!-- Icon -->
         <link rel="icon" href="{{ url('images/LogoPerusahaan.png') }}" />
-        <title>Kotak Pengaduan Elektronik (KPE)</title>
+        <title>ADMIN JASA BANTU</title>
         
         @include('layouts.partials.css')
+        @notifyCss
     </head>
 
     <body>
@@ -26,7 +27,7 @@
                 <!-- partial:partials/_navbar.html -->
                 @include('layouts.partials.navbar')
                 <!-- partial -->
-
+               
                 <!-- Body -->
                 <div class="page-content">
                     @yield('content')

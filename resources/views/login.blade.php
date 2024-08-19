@@ -10,27 +10,70 @@
    
 </head>
 <body>
-    <h1>Login</h1>
-    <div class="container-sm">
-    <form action="sesi/login" method="POST" >
-        @csrf
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your Username with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-    <x-notify::notify />
+        <!--  Noble Template-->
+        <div class="main-wrapper" style="margin-top: 10%;">
+		<div class="page-wrapper full-page">
+			<div class="page-content d-flex align-items-center justify-content-center">
+
+				<div class="row w-100 mx-0 auth-page">
+					<div class="col-md-8 col-xl-6 mx-auto">
+						<div class="card">
+							<div class="row">
+                                <div class="col-md-4 pe-md-0">
+                                <div class="auth-side-wrapper">
+                                    <lottie-player
+                                        src="public/json/Animation.json"
+                                        background="transparent"
+                                        speed="1"
+                                        style="width: 100%; height: 100%"
+                                        loop
+                                        autoplay
+                                    ></lottie-player>
+                                </div>
+                                </div>
+                                <div class="col-md-8 ps-md-0">
+                                <div class="auth-form-wrapper px-4 py-5">
+                                    <a href="#" class="noble-ui-logo d-block mb-2">JASA<span>BANTU</span></a>
+                                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
+                                    @if(session()->has('message'))
+                                        <div class="alert alert-danger">
+                                            {{ session()->get('message') }}
+                                        </div>
+                                    @endif
+                                    <form class="forms-sample" action="sesi/login" method="POST">
+                                        @csrf
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">username</label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="userPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" placeholder="Password">
+                                    </div>
+                                    <div class="form-check mb-3">
+                                   
+                                        <input type="checkbox" class="form-check-input" id="authCheck">
+                                        <label class="form-check-label" for="authCheck">
+                                        Remember me
+                                        </label>
+                                    </div>
+                                    <div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                        <a href="/" class="btn btn-danger me-2 mb-2 mb-md-0 text-white">Back</a>
+                                    </div>
+                                    
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+        <!-- End Template -->
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     @notifyJs

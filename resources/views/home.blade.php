@@ -266,7 +266,7 @@
               <div class="carousel-inner">
               <div class="carousel-item active">
                     <div class="row">
-                       <div class="col-md-12">
+                       <div class="col-md-12" >
                           <h1 class="testimonial_taital">Testimonial</h1>
                          <div class="testimonial_section_2">
                              <h2 class="client_name_text">Anonym <span style="float: right;"><img src="images/quick-icon.png"></span></h2>
@@ -279,23 +279,37 @@
                        </div>
                     </div>
                  </div>
-               @foreach($testimonis as $testimoni)
-               <div class="carousel-item ">
-                    <div class="row">
+                 
+               
+               <?php
+               $testimoni = $testimonis->toArray();
+               for($i=0; $i <=count($testimoni); $i++){
+                  //dd($testimoni);
+                  ?>
+                  @if(isset($testimoni[$i]))
+                  <div class="carousel-item ">
+                    <div class="row" >
                        <div class="col-md-12">
                           <h1 class="testimonial_taital">Testimonial</h1>
                          <div class="testimonial_section_2">
-                             <h2 class="client_name_text">{{ $testimoni->name }} <span style="float: right;"><img src="images/quick-icon.png"></span></h2>
-                             <p class="textimonial_text">Dengan harga segitu sudah dapat servis laptop yang sangat baik</p>
+                             <h2 class="client_name_text">{{ $testimoni[$i]['name'] }} <span style="float: right;"><img src="images/quick-icon.png"></span></h2>
+                             <p class="textimonial_text">{{ $testimoni[$i]['testimoni'] }}</p>
                          </div>
+                        {{ $i++ }}
                          <div class="testimonial_section_2">
-                             <h2 class="client_name_text"><img src="images/quick-icon.png"> <span style="float: right;">{{ $testimoni->name }}</span></h2>
-                             <p class="textimonial_text">Pelayanan yang sangat bagus</p>
+                             <h2 class="client_name_text"><img src="images/quick-icon.png"> <span style="float: right;">{{ $testimoni[$i]['name'] }}</span></h2>
+                             <p class="textimonial_text">{{ $testimoni[$i]['testimoni'] }}</p>
                          </div>
                        </div>
                     </div>
-                 </div>
-               @endforeach
+                  </div>
+                  @else
+                       
+                  @endif
+                  <?php
+               }?>
+               
+              
                  
                  
               </div>
